@@ -7,15 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo no build step today!",
     "start:server": "cd src && nodemon index.js",
-    "start": "npm run start:server"
+    "start": "node --env-file=.env && npm run start:server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-parser": "^3.0.0",
     "express": "^4.21.1",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.3",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.7"
   },
-  "devDependencies": {},
   "description": ""
 }
