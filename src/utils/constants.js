@@ -8,3 +8,7 @@ export const dataCategory = Object.freeze (
         BOUNDARYDATA: 'boundary'
     }
 );
+
+export const boundaryDataJsonURL = "https://data.calgary.ca/resource/surr-xmvs.json";
+export const boundaryDataCSVURL = "https://data.calgary.ca/resource/surr-xmvs.csv";
+export const boundaryDataGeoURL = "https://data.calgary.ca/resource/surr-xmvs.geojson";
