@@ -4,7 +4,7 @@ import {
 } from "../../utils/db/dbConn.js";
 import fs from "fs";
 import csv from "csv-parser";
-import CrimeDataTmp from "../../models/crimeData_tmp.js"; // Import your model
+import CrimeDataTmp from "../../models/crimedata_tmp.js"; // Import your model
 import { dropCollection } from "../../utils/db/collectionOperator.js";
 import { crimedata_tmp_collection_name } from "../../utils/db/tableNameConst.js";
 

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { crimedata_tmp_collection_name } from '../utils/db/tableNameConst.js';
 
 const crimeDataTmpSchema  = new mongoose.Schema({
     community: {
@@ -31,8 +32,8 @@ const crimeDataTmpSchema  = new mongoose.Schema({
         ], // Ensures only valid month are allowed
       },
 
-}
+}, {collection: crimedata_tmp_collection_name}
     
 );
 
-export default mongoose.model('crimedata_tmp', crimeDataTmpSchema);
+export default mongoose.model(crimedata_tmp_collection_name, crimeDataTmpSchema);
