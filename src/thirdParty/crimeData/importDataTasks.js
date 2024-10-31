@@ -16,10 +16,6 @@ import { getCrimeDataFromAPI } from "./getCrimeDataFromAPI.js";
 import { insertDataIntoMongoDB } from "./loadDataToDB.js";
 import { renameCollection, dropCollection } from "../../utils/db/collectionOperator.js";
 import fs from "fs";
-import {
-    connectToDatabase,
-    closeDatabaseConnection,
-  } from "../../utils/db/dbConn.js";
 import { crimedata_backup_coolection_name, crimedata_main_collection_name, crimedata_tmp_collection_name } from "../../utils/db/tableNameConst.js";
 
 export const importDataTask = async () => {
@@ -56,14 +52,14 @@ export const importDataTask = async () => {
 
 
 
-async function main() {
-    try {
-      await importDataTask();
-    } catch (error) {
-      console.error("Error in processing:", error);
-    } finally{
-      await closeDatabaseConnection();
-    }
-  }
+// async function main() {
+//     try {
+//       await importDataTask();
+//     } catch (error) {
+//       console.error("Error in processing:", error);
+//     } finally{
+//       await closeDatabaseConnection();
+//     }
+//   }
   
-  main();
+//   main();

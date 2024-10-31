@@ -4,13 +4,12 @@ import { renameCollection, dropCollection } from "../../utils/db/collectionOpera
 import fs from "fs";
 import { cityboundary_backup_coolection_name, cityboundary_main_collection_name, cityboundary_tmp_collection_name } from "../../utils/db/tableNameConst.js";
 
-export const importDataTask = async () => {
+export const importBoundaryDataTask = async () => {
   try {
     const tmpGeonJsonPath = await getBoundaryDataFromAPI();
 
     if (tmpGeonJsonPath) {
         const ifComplete = await insertGeoJSONData(tmpGeonJsonPath);
-        console.log("=====ifcomplete: "+ifComplete);
       if (ifComplete) {
         //drop backup if it exists
         await dropCollection(cityboundary_backup_coolection_name);
@@ -37,14 +36,16 @@ export const importDataTask = async () => {
   }
 };
 
+export default importBoundaryDataTask;
 
 
-async function main() {
-    try {
-      await importDataTask();
-    } catch (error) {
-      console.error("Error in processing:", error);
-    } 
-  }
+
+// async function main() {
+//     try {
+//       await importBoundaryDataTask();
+//     } catch (error) {
+//       console.error("Error in processing:", error);
+//     } 
+//   }
   
-  main();
+//   main();

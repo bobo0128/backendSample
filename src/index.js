@@ -1,6 +1,7 @@
 import express from 'express'
 import showRequests from './utils/showRequests.js';
 import crimeDataController from './controllers/crimeDataController.js';
+import './cronjob/index.js'; 
 
 
 const port = process.env.PORT || 3000
@@ -9,7 +10,6 @@ const app = express()
 app.use(showRequests)
 
 app.use(express.json())
-
 
 app.use('/api/getCrimeData/', crimeDataController)
 
